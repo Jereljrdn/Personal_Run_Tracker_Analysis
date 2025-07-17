@@ -22,11 +22,6 @@ To combine running performance metrics with weather and environmental data to:
 ## Visualization
 
 Plots comparing pace against various factors:
-### Cadence vs Pace
 ![](Plots/cadence_vs_pace.png)
-
-### Elevation vs Pace
 ![](Plots/elevation_vs_pace.png)
-
-### Temperature vs Pace
 ![](Plots/temperature_vs_pace.png)
