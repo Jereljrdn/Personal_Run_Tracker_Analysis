@@ -18,3 +18,15 @@ To combine running performance metrics with weather and environmental data to:
 - Calculated **Pearson correlation coefficients** between average pace and **temperature**, **elevation gain**, and **cadence**.
 - Built a **linear regression model** to evaluate which variables have the strongest influence on running pace.
 - Filtered out extreme outliers (e.g., marathon) to avoid skewed analysis.
+
+## Visualization
+
+Plots comparing pace against various factors:
+### Cadence vs Pace
+![](Plots/cadence_vs_pace.png)
+
+### Elevation vs Pace
+![](Plots/elevation_vs_pace.png)
+
+### Temperature vs Pace
+![](Plots/temperature_vs_pace.png)
