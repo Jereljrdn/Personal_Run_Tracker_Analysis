@@ -23,5 +23,10 @@ To combine running performance metrics with weather and environmental data to:
 
 Plots comparing pace against various factors:
 ![](Plots/cadence_vs_pace.png)
+Cadence showed a strong **negative correlation (-0.94)** with average pace — higher cadence resulted in faster runs.
+
 ![](Plots/elevation_vs_pace.png)
+Elevation had a mild impact. Slight increase in pace (slower time) as elevation gain increased.
+
 ![](Plots/temperature_vs_pace.png)
+A weak to moderate **positive correlation (0.31)** — higher temps tended to slow me down, possibly due to heat fatigue.
