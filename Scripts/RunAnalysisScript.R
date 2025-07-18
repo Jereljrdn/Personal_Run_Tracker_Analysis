@@ -15,6 +15,7 @@ lapply(packages, library, character.only = TRUE)
 # -----------------------
 dir.create(here("Plots"), showWarnings = FALSE)
 dir.create(here("Output"), showWarnings = FALSE)
+dir.create(here("Data"), showWarnings = FALSE)
 
 # -----------------------
 # Load and Clean Data
