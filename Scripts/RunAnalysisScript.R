@@ -5,7 +5,7 @@
 # -----------------------
 # Install and Load Packages
 # -----------------------
-packages <- c("tidyverse", "readxl", "lubridate", "janitor", "hms")
+packages <- c("tidyverse", "readxl", "lubridate", "janitor", "hms", "here")
 installed <- packages %in% rownames(installed.packages())
 if (any(!installed)) install.packages(packages[!installed])
 lapply(packages, library, character.only = TRUE)
