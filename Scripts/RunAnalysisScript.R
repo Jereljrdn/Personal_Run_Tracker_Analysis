@@ -20,6 +20,12 @@ dir.create(here("Data"), showWarnings = FALSE)
 # -----------------------
 # Load and Clean Data
 # -----------------------
+data_file <- here("Data", "RunTimes_WithWeather.xlsx")
+
+if (!file.exists(data_file)) {
+  stop("File not found: 'RunTimes_WithWeather.xlsx'\nPlease place your Excel file with run data inside the 'Data' folder in the project directory.")
+}
+
 df <- read_excel(here("Data", "RunTimes_WithWeather.xlsx")) %>%
   clean_names() %>%
   filter(distance_mi < 20)  # Remove marathons
