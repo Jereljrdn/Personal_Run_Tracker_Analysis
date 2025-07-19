@@ -68,4 +68,4 @@ These datasets include real running stats but do **not** contain GPS routes or p
    
 4. Open and run the **'RunAnalysisScript'** R file to:
    - Clean and analyze the updated dataset
-   - Produce plots (saved to '/Plots' folder) and model output (saved to '/Output' folder). This will save all plots in '/Plots' folder.
+   - Produce plots (saved to '/Plots' folder) and model output (saved to '/Output' folder).
