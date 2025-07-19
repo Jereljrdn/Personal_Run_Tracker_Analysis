@@ -77,7 +77,7 @@ temp_plot <- ggplot(df, aes(x = temp_f, y = avg_pace_sec)) +
   ) +
   theme_minimal()
 
-ggsave(here("..", "Plots", "temperature_vs_pace.png"), temp_plot, width = 8, height = 6)
+ggsave(here("..", "Plots", "temperature_vs_pace.png"), temp_plot, width = 8, height = 6, bg = "white")
 
 # -----------------------
 # Plot: Elevation vs. Pace
@@ -98,7 +98,7 @@ elev_plot <- ggplot(df, aes(x = elevation_gain_ft, y = avg_pace_sec)) +
   ) +
   theme_minimal()
 
-ggsave(here("..", "Plots", "elevation_vs_pace.png"), elev_plot, width = 8, height = 6)
+ggsave(here("..", "Plots", "elevation_vs_pace.png"), elev_plot, width = 8, height = 6, bg = "white")
 
 
 # -----------------------
@@ -120,7 +120,7 @@ cadence_plot <- ggplot(df, aes(x = cadence, y = avg_pace_sec)) +
   ) +
   theme_minimal()
 
-ggsave(here("..", "Plots", "cadence_vs_pace.png"), cadence_plot, width = 8, height = 6)
+ggsave(here("..", "Plots", "cadence_vs_pace.png"), cadence_plot, width = 8, height = 6, bg = "white")
 
 # -----------------------
 # 10. Optional: Save Session Info
