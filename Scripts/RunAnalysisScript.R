@@ -13,20 +13,19 @@ lapply(packages, library, character.only = TRUE)
 # -----------------------
 # Create Output Folders (if they don't exist)
 # -----------------------
-dir.create(here("Plots"), showWarnings = FALSE)
-dir.create(here("Output"), showWarnings = FALSE)
-dir.create(here("Data"), showWarnings = FALSE)
+dir.create(here("..", "Plots"), showWarnings = FALSE)
+dir.create(here("..", "Output"), showWarnings = FALSE)
 
 # -----------------------
 # Load and Clean Data
 # -----------------------
-data_file <- here("Data", "RunTimes_WithWeather.xlsx")
+data_file <- here("..", "Data", "RunTimes_WithWeather.xlsx")
 
 if (!file.exists(data_file)) {
   stop("File not found: 'RunTimes_WithWeather.xlsx'\nPlease place your Excel file with run data inside the 'Data' folder in the project directory.")
 }
 
-df <- read_excel(here("Data", "RunTimes_WithWeather.xlsx")) %>%
+df <- read_excel(data_file) %>%
   clean_names() %>%
   filter(distance_mi < 20)  # Remove marathons
 
@@ -57,7 +56,7 @@ model <- lm(avg_pace_sec ~ cadence + elevation_gain_ft + temp_f + condition + ci
 print(summary(model))
 
 # Save model summary to file
-capture.output(summary(model), file = here("Output", "lm_summary.txt"))
+capture.output(summary(model), file = here("..", "Output", "lm_summary.txt"))
 
 # -----------------------
 # Plot: Temperature vs. Pace
@@ -78,7 +77,7 @@ temp_plot <- ggplot(df, aes(x = temp_f, y = avg_pace_sec)) +
   ) +
   theme_minimal()
 
-ggsave(here("Plots", "temperature_vs_pace.png"), temp_plot, width = 8, height = 6)
+ggsave(here("..", "Plots", "temperature_vs_pace.png"), temp_plot, width = 8, height = 6)
 
 # -----------------------
 # Plot: Elevation vs. Pace
@@ -99,7 +98,7 @@ elev_plot <- ggplot(df, aes(x = elevation_gain_ft, y = avg_pace_sec)) +
   ) +
   theme_minimal()
 
-ggsave(here("Plots", "elevation_vs_pace.png"), elev_plot, width = 8, height = 6)
+ggsave(here("..", "Plots", "elevation_vs_pace.png"), elev_plot, width = 8, height = 6)
 
 
 # -----------------------
@@ -121,7 +120,12 @@ cadence_plot <- ggplot(df, aes(x = cadence, y = avg_pace_sec)) +
   ) +
   theme_minimal()
 
-ggsave(here("Plots", "cadence_vs_pace.png"), cadence_plot, width = 8, height = 6)
+ggsave(here("..", "Plots", "cadence_vs_pace.png"), cadence_plot, width = 8, height = 6)
+
+# -----------------------
+# 10. Optional: Save Session Info
+# -----------------------
+writeLines(capture.output(sessionInfo()), here("..", "Output", "session_info.txt"))
 
 # -----------------------
 # 10. Optional: Save Session Info
