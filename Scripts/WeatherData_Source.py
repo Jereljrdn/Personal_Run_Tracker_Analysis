@@ -2,6 +2,8 @@ import pandas as pd
 import requests
 from datetime import datetime
 import time
+from pathlib import Path
+
 
 def main():
 
@@ -9,7 +11,12 @@ def main():
     API_KEY = input("Enter WeatherAPI Key: ")
     BASE_URL = "http://api.weatherapi.com/v1/history.json"
 
-    input_path = input("Enter path for run data (Excel file): ")
+    script_location = Path(__file__).resolve()
+    project_root = script_location.parent.parent  # goes up from Scripts/
+    data_dir = project_root / "Data"
+
+    input_path = data_dir / "RunTimes.xlsx"
+    output_path = data_dir / "RunTimes_WithWeather.xlsx"
     df = pd.read_excel(input_path)
 
     #Clean time column to prevent Excel formatting issues
@@ -69,7 +76,6 @@ def main():
     merged_df = pd.merge(df, weather_df, on=['Date', 'Weather Time', 'City'], how='left')
 
     #Save the final output
-    output_path = input("Enter path to save the output Excel file: ")
     merged_df.to_excel(output_path, index=False)
 
     print("Weather data successfully saved to:", output_path)
