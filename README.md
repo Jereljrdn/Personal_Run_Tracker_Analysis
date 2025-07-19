@@ -63,7 +63,9 @@ These datasets include real running stats but do **not** contain GPS routes or p
    - Fetch historical weather data from WeatherAPI.
    - Merge it with original 'RunTimes.xlsx' excel file
    - Create a new enhanced dataset called 'RunTimes_WithWeather' in the '/Data' folder.
-   > *When you run the Python script, you will be prompted to enter your **WeatherAPI key**, which you can obtain by creating a free account at [WeatherAPI](https://www.weatherapi.com/).*
+   
+   >  *When you run the Python script, you will be prompted to enter your **WeatherAPI key**, which you can obtain by creating a free account at [WeatherAPI](https://www.weatherapi.com/).*
+   
 4. Open and run the **'RunAnalysisScript'** R file to:
    - Clean and analyze the updated dataset
    - Produce plots (saved to '/Plots' folder) and model output (saved to '/Output' folder). This will save all plots in '/Plots' folder.
